@@ -1,7 +1,11 @@
+import User from "./Start"
 function App() {
 
   return (
-    <h1>hello react with vite</h1>
+    <>
+    <User/>
+    <h1>How Are You Everyone</h1>
+    </>
   )
 }
 
