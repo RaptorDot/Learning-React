@@ -1,5 +1,6 @@
 import React, {useId} from 'react'
-
+import PropTypes from 'prop-types'; // ES6
+// var PropTypes = require('prop-types'); // ES5 with npm
 function InputBox({
     label,
     amount,
