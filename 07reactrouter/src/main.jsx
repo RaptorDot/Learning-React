@@ -1,17 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { element } from 'prop-types'
-import Home from '../components/home/Home.jsx'
-import About from '../components/about/About.jsx'
-import layout from './Layout.jsx'
+import React from "react";
+import Home from "../components/home/Home";
 
-  const router = createBrowserRouter([
+
+
+
+const router = createBrowserRouter([
     {
         path : "/",
-        element : <Layout/>,
+        // element : <layout/>,
         children : [
           {
           path : "",
