@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "lint",
+			"path": "07routernreact",
+			"problemMatcher": [],
+			"label": "npm: lint - 07routernreact",
+			"detail": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
