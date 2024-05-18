@@ -8,7 +8,6 @@ import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import User from './components/User.jsx'
-import Github from './components/Github.jsx'
 
   // const router = createBrowserRouter([
   //   {
