@@ -14,6 +14,23 @@ function App() {
     const updateTodo = (id ,todo)=>{
       setTodo((prev)=>prev.map((prevT)=>prevT.id===id? todo: prevT))
     }
+    const deleteTodo = (id)=>{
+        setTodo((prev)=>prev.filter((todo)=>todo.id!==id))
+    }
+    const toggleComplete = (id)=>{
+        setTodo((prev)=>prev.map((todo)=>todo.id==id? {...todo , isCompleated}: todo))
+    }
+
+    useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+      if (todos&&todos.length>0) {
+        setTodo(todos);
+      }
+  }, []);
+
+  useEffect(() => {
+  localStorage.setItem(todos ,JSON.stringify(todos))
+  }, [todos])
 
 
   return (
