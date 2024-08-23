@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TodoContextProvider } from './contexts';
+import TodoItem from './components/TodoItem';
 
 
 function App() {
@@ -18,20 +19,21 @@ function App() {
         setTodo((prev)=>prev.filter((todo)=>todo.id!==id))
     }
     const toggleComplete = (id)=>{
-        setTodo((prev)=>prev.map((todo)=>todo.id==id? {...todo , isCompleated}: todo))
+        setTodo((prev)=>prev.map((todo)=>todo.id==id? {...todo , isCompleated: !todo.isCompleated}: todo))
     }
 
     useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todos"));
-      if (todos&&todos.length>0) {
-        setTodo(todos);
+      const todos = JSON.parse(localStorage.getItem("todos"))
+  
+      if (todos && todos.length > 0) {
+        setTodos(todos)
       }
-  }, []);
-
-  useEffect(() => {
-  localStorage.setItem(todos ,JSON.stringify(todos))
-  }, [todos])
-
+    }, [])
+  
+    useEffect(() => {
+      localStorage.setItem("todos", JSON.stringify(todos))
+    }, [todos])
+  
 
   return (
   <TodoContextProvider value = {{todos, addtodo, updateTodo, deleteTodo, toggleComplete}} >
@@ -43,6 +45,11 @@ function App() {
             </div>
             <div className="flex flex-wrap gap-y-3">
                 {/*Loop and Add TodoItem here */}
+                {todos.map((todos)=>(
+                <div key = {todo.id} className="w-full">
+                  <TodoItem todo={todo}></TodoItem>
+                </div>
+              ))}
             </div>
         </div>
     </div>
