@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <h1>learning redux toolkit</h1>
+      {/* <h1>learning redux toolkit</h1> */}
       <AddTodo/>
       <Todos />
     </>
